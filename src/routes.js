@@ -16,5 +16,6 @@ routes.post('/users', UserController.store);
 routes.put('/users/:id', UserController.update);
 
 routes.post('/recipients', RecipientController.store);
+routes.put('/recipients/:id', RecipientController.update);
 
 export default routes;
