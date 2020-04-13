@@ -13,6 +13,18 @@ class UserController {
         .min(6),
     });
 
+    /**
+     * Check if logged user is admin
+     */
+    const currentUser = await User.findByPk(req.userId);
+
+    if (!currentUser.admin) {
+      return res.status(401).json({
+        error:
+          'You do not have the rights to do this. Contact the administrator.',
+      });
+    }
+
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation failed.' });
     }

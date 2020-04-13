@@ -2,10 +2,11 @@ import Sequelize from 'sequelize';
 
 import User from '../app/models/User';
 import Recipients from '../app/models/Recipients';
+import File from '../app/models/File';
 
 import databaseConfig from '../config/database';
 
-const models = [User, Recipients];
+const models = [User, Recipients, File];
 
 class Database {
   constructor() {
